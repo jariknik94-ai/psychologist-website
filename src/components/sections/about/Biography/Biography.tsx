@@ -16,16 +16,18 @@ export function Biography() {
           <p className={styles.eyebrow}>Обо мне</p>
 
           <h1 id="biography-title" className={styles.title}>
-            Давайте познакомимся
+            {site.name}
           </h1>
-            <p className={styles.intro}>
-              Меня зовут {site.name}. Я психолог.
-            </p>
 
-            <div className={styles.text}>
-              <p>{site.approach}</p>
-              <p>{site.requests}</p>
-            </div>
+          <p className={styles.intro}>
+            Психолог. Онлайн-консультации и очные групповые
+            сессии.
+          </p>
+
+          <div className={styles.text}>
+            <p>{site.biography}</p>
+          </div>
+
           <Link href="/contacts" className={styles.contactLink}>
             Связаться со мной
             <span aria-hidden="true"> →</span>

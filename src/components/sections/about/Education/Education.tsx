@@ -16,14 +16,20 @@ export function Education() {
           </h2>
 
           <div className={styles.placeholder}>
+            <h3 className={styles.subtitle}>
+              Профильное образование
+            </h3>
+
             <p className={styles.description}>
               {site.education}
             </p>
 
-            <p className={styles.note}>
-              Здесь появятся сведения о профессиональном
-              образовании, дополнительной подготовке
-              и повышении квалификации.
+            <h3 className={styles.subtitle}>
+              Дополнительная подготовка
+            </h3>
+
+            <p className={styles.description}>
+              {site.training}
             </p>
           </div>
         </div>

@@ -19,14 +19,19 @@
   background: var(--color-surface);
 }
 
-.description {
-  font-size: 18px;
-  line-height: 1.7;
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &:not(:first-child) {
+    margin-top: 32px;
+  }
 }
 
-.note {
-  margin-top: 16px;
+.description {
+  margin-top: 12px;
   color: var(--color-text-muted);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
 }

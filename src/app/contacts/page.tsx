@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Контакты",
   description:
     "Контактная информация для записи на консультацию психолога.",
+  alternates: {
+    canonical: "/contacts",
+  },
 };
 
 export default function ContactsPage() {

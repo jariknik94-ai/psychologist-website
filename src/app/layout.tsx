@@ -19,7 +19,11 @@ export const metadata: Metadata = {
 
   description:
     `${site.name}. ${site.format}. Контакты для записи и информация о работе.`,
-
+    
+    alternates: {
+      canonical: "/",
+    },
+    
   openGraph: {
     type: "website",
     locale: "ru_RU",

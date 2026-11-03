@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Статьи",
   description:
     "Материалы о чувствах, отношениях и заботе о себе.",
+  alternates: {
+    canonical: "/articles",
+  },
 };
 
 export default function ArticlesPage() {

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Консультации",
   description:
     `${site.format}. Информация о консультациях и запись к психологу.`,
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

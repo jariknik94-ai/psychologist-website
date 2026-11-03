@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className={styles.page}>
+    <main id="main-content"
+  className={styles.page}
+  tabIndex={-1}>
       <Container className={styles.intro}>
         <h1 className={styles.title}>Консультации</h1>
 

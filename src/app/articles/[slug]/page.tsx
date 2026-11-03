@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import { ArticleContent } from "@/components/shared/ArticleContent/ArticleContent";
 import { RelatedArticles } from "@/components/shared/RelatedArticles/RelatedArticles";
 import { Container } from "@/components/ui/Container/Container";
 import { articles } from "@/data/articles";
 import { site } from "@/data/site";
-
+import { ArticleToc } from "@/components/shared/ArticleToc/ArticleToc";
 import styles from "./page.module.scss";
 
 type ArticlePageProps = {
@@ -95,14 +95,8 @@ export default async function ArticlePage({
               />
             </div>
           )}
-
-          <div className={styles.body}>
-            {article.paragraphs.map((paragraph, index) => (
-              <p key={`${article.slug}-${index}`}>
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <ArticleToc blocks={article.content} />
+          <ArticleContent blocks={article.content} />
         </article>
 
         <div className={styles.related}>

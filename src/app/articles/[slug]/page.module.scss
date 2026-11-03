@@ -75,14 +75,6 @@
   object-fit: cover;
 }
 
-.body {
-  display: grid;
-  gap: 24px;
-  padding-top: 32px;
-  font-size: 18px;
-  line-height: 1.8;
-  overflow-wrap: break-word;
-}
 
 .related {
   max-width: 760px;
@@ -90,8 +82,7 @@
 }
 
 @media (max-width: 480px) {
-  .excerpt,
-  .body {
+  .excerpt {
     font-size: 16px;
   }
 }

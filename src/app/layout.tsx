@@ -7,7 +7,10 @@ import { Header } from "@/components/layout/Header/Header";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: `${site.name} | Психолог`,
+  title: {
+    default: `${site.name} | Психолог`,
+    template: `%s | ${site.name}`,
+  },
   description:
     `${site.name}. ${site.format}. Контакты для записи и информация о работе.`,
 };
@@ -20,6 +23,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ru">
       <body>
+        <a href="#main-content" className="skip-link">
+          Перейти к содержимому
+        </a>
+
         <Header />
         {children}
         <Footer />

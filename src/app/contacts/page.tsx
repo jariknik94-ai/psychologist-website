@@ -5,7 +5,7 @@ import { ContactDetails } from "@/components/sections/contacts/ContactDetails/Co
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: "Контакты | Психолог",
+  title: "Контакты",
   description:
     "Контактная информация для записи на консультацию психолога.",
 };

@@ -6,14 +6,14 @@ import { Container } from "@/components/ui/Container/Container";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: "Статьи | Психолог",
+  title: "Статьи",
   description:
     "Материалы о чувствах, отношениях и заботе о себе.",
 };
 
 export default function ArticlesPage() {
   return (
-    <main className={styles.page}>
+    <main id="main-content" className={styles.page} tabIndex={-1}>
       <Container>
         <div className={styles.heading}>
           <h1 className={styles.title}>Статьи</h1>

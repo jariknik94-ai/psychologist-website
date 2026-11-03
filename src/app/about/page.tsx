@@ -8,14 +8,16 @@ import { site } from "@/data/site";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: `Обо мне | ${site.name}`,
+  title: "Обо мне",
   description:
     `Информация о психологе ${site.name}: образование и подход к работе.`,
 };
 
 export default function AboutPage() {
   return (
-    <main className={styles.page}>
+    <main id="main-content"
+  className={styles.page}
+  tabIndex={-1}>
       <Biography />
       <Education />
       <BookingSection />

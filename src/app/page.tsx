@@ -9,7 +9,11 @@ import styles from "./page.module.scss";
 
 export default function HomePage() {
   return (
-    <main className={styles.page}>
+      <main
+    id="main-content"
+    className={styles.page}
+    tabIndex={-1}
+        >
       <Hero />
       <AboutPreview />
       <ServicesPreview />

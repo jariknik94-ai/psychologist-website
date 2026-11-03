@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container/Container";
-import { site } from "@/data/site";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Logo } from "@/components/ui/Logo/Logo";
+import { site } from "@/data/site";
 
 import styles from "./Footer.module.scss";
 
@@ -12,12 +13,10 @@ export function Footer() {
       <Container>
         <div className={styles.main}>
           <div className={styles.info}>
-            <Link href="/" className={styles.name}>
-              {site.name}
-            </Link>
+            <Logo />
 
             <p className={styles.description}>
-              {site.role}. {site.format}.
+              {site.format}.
             </p>
           </div>
 
@@ -48,36 +47,37 @@ export function Footer() {
               </li>
             </ul>
           </nav>
-            <div className={styles.contacts}>
-              <h2 className={styles.contactsTitle}>
-                Связаться со мной
-              </h2>
 
-              <a
-                href={site.phone.href}
-                className={`${styles.link} ${styles.contactLink}`}
-              >
-                <span className={styles.iconBadge}>
-                  <Icon name="phone" />
-                </span>
+          <div className={styles.contacts}>
+            <h2 className={styles.contactsTitle}>
+              Связаться со мной
+            </h2>
 
-                <span>{site.phone.label}</span>
-              </a>
+            <a
+              href={site.phone.href}
+              className={`${styles.link} ${styles.contactLink}`}
+            >
+              <span className={styles.iconBadge}>
+                <Icon name="phone" />
+              </span>
 
-              <a
-                href={site.telegram.href}
-                className={`${styles.link} ${styles.contactLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram Анастасии — откроется в новой вкладке"
-              >
-                <span className={styles.iconBadge}>
-                  <Icon name="telegram" />
-                </span>
+              <span>{site.phone.label}</span>
+            </a>
 
-                <span>Nastya_Niku</span>
-              </a>
-            </div>
+            <a
+              href={site.telegram.href}
+              className={`${styles.link} ${styles.contactLink}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram Анастасии — откроется в новой вкладке"
+            >
+              <span className={styles.iconBadge}>
+                <Icon name="telegram" />
+              </span>
+
+              <span>{site.telegram.label}</span>
+            </a>
+          </div>
         </div>
 
         <p className={styles.copyright}>

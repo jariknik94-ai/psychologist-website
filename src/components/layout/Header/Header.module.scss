@@ -12,39 +12,17 @@
   padding-block: 20px;
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  gap: 4px;
-
-  &:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 5px;
-    border-radius: 2px;
-  }
-}
-
-.name {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.caption {
-  color: var(--color-text-muted);
-  font-size: 14px;
+.brand {
+  min-width: 0;
 }
 
 @media (max-width: 640px) {
   .inner {
-    align-items: center;
-    flex-direction: row;
-    gap: 16px;
+    gap: 12px;
+    padding-block: 16px;
   }
 
-  .logo {
-    flex-shrink: 1;
-    min-width: 0;
+  .brand {
+    flex: 1;
   }
 }

@@ -5,8 +5,11 @@
   --color-text-muted: #666d66;
   --color-primary: #526b56;
   --color-border: #e5e8e2;
-
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
   --container-width: 1200px;
+  --color-background-soft: #eef2eb;
+  --color-primary-hover: #405744;
 }
 
 *,
@@ -23,11 +26,18 @@ body {
   margin: 0;
   background: var(--color-background);
   color: var(--color-text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   display: flex;
   flex-direction: column;
   min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  text-wrap: balance;
 }
 
 main {

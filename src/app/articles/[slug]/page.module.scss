@@ -1,0 +1,84 @@
+.page {
+  padding-block: clamp(40px, 7vw, 80px);
+}
+
+.article {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-bottom: 32px;
+  color: var(--color-primary);
+  text-underline-offset: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.header {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.notice {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--color-background-soft);
+  color: var(--color-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+
+.excerpt {
+  margin-top: 24px;
+  color: var(--color-text-muted);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.author {
+  margin-top: 20px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.body {
+  display: grid;
+  gap: 24px;
+  padding-top: 32px;
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+  .excerpt,
+  .body {
+    font-size: 16px;
+  }
+}
+
+.related {
+  max-width: 760px;
+  margin-inline: auto;
+}

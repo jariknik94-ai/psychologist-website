@@ -1,0 +1,134 @@
+.footer {
+  padding-block: 48px 24px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 40px;
+}
+
+.info {
+  max-width: 360px;
+}
+
+.name {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.description {
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-block;
+  padding-block: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-underline-offset: 5px;
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
+.name,
+.link {
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contactsTitle {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.copyright {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .info {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  &:hover .iconBadge {
+    background: var(--color-primary);
+    color: var(--color-surface);
+  }
+}
+
+.iconBadge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-background);
+  color: var(--color-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconBadge {
+    transition: none;
+  }
+}

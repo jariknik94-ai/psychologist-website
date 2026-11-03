@@ -1,0 +1,46 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 5px;
+  }
+}
+
+.primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-surface);
+
+  &:hover {
+    background: var(--color-surface);
+    color: var(--color-primary);
+  }
+}
+
+.secondary {
+  color: var(--color-primary);
+  text-underline-offset: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

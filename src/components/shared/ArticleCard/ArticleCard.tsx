@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { Article } from "@/types/article";
@@ -23,24 +24,38 @@ export function ArticleCard({
         className={styles.link}
         aria-labelledby={`article-${article.slug}-title`}
       >
-        <span className={styles.badge}>
-          {isDraft ? "Черновик" : "Статья"}
-        </span>
+        {article.cover && (
+          <div className={styles.cover}>
+            <Image
+              src={article.cover.src}
+              alt={article.cover.alt}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1248px) 50vw, 600px"
+              className={styles.image}
+            />
+          </div>
+        )}
 
-        <Heading
-          id={`article-${article.slug}-title`}
-          className={styles.title}
-        >
-          {article.title}
-        </Heading>
+        <div className={styles.content}>
+          <span className={styles.badge}>
+            {isDraft ? "Черновик" : "Статья"}
+          </span>
 
-        <p className={styles.excerpt}>{article.excerpt}</p>
+          <Heading
+            id={`article-${article.slug}-title`}
+            className={styles.title}
+          >
+            {article.title}
+          </Heading>
 
-        <span className={styles.caption}>
-          {isDraft
-            ? "Демонстрационный материал"
-            : "Материал психолога"}
-        </span>
+          <p className={styles.excerpt}>{article.excerpt}</p>
+
+          <span className={styles.caption}>
+            {isDraft
+              ? "Демонстрационный материал"
+              : "Материал психолога"}
+          </span>
+        </div>
       </Link>
     </article>
   );

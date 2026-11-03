@@ -62,6 +62,19 @@
   font-size: 14px;
 }
 
+.cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  margin-top: 32px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--color-background-soft);
+}
+
+.coverImage {
+  object-fit: cover;
+}
+
 .body {
   display: grid;
   gap: 24px;
@@ -71,14 +84,14 @@
   overflow-wrap: break-word;
 }
 
+.related {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
 @media (max-width: 480px) {
   .excerpt,
   .body {
     font-size: 16px;
   }
-}
-
-.related {
-  max-width: 760px;
-  margin-inline: auto;
 }

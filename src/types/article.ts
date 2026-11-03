@@ -4,4 +4,8 @@ export type Article = {
   excerpt: string;
   status: "draft" | "published";
   paragraphs: string[];
+  cover?: {
+    src: string;
+    alt: string;
+  };
 };

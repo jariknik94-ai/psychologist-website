@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { RelatedArticles } from "@/components/shared/RelatedArticles/RelatedArticles";
 import { Container } from "@/components/ui/Container/Container";
 import { articles } from "@/data/articles";
@@ -82,6 +84,18 @@ export default async function ArticlePage({
             )}
           </header>
 
+          {article.cover && (
+            <div className={styles.cover}>
+              <Image
+                src={article.cover.src}
+                alt={article.cover.alt}
+                fill
+                sizes="(max-width: 808px) 100vw, 760px"
+                className={styles.coverImage}
+              />
+            </div>
+          )}
+
           <div className={styles.body}>
             {article.paragraphs.map((paragraph, index) => (
               <p key={`${article.slug}-${index}`}>
@@ -90,6 +104,7 @@ export default async function ArticlePage({
             ))}
           </div>
         </article>
+
         <div className={styles.related}>
           <RelatedArticles currentSlug={article.slug} />
         </div>

@@ -51,10 +51,10 @@ export function ConsultationFormat({
           <span>Написать в Telegram</span>
         </a>
 
-        <p className={styles.hint}>
+        {/* <p className={styles.hint}>
           Откроется Telegram в новой вкладке. Укажите, какой
           формат встречи вас интересует.
-        </p>
+        </p> */}
       </div>
     </section>
   );

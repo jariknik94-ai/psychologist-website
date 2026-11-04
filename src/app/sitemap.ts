@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/articles",
     "/contacts",
+    "/services/group",
   ];
 
   const staticPages: MetadataRoute.Sitemap = pages.map((path) => ({

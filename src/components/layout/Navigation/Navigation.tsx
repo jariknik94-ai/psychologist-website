@@ -35,14 +35,18 @@ export function Navigation() {
       <button
         ref={buttonRef}
         type="button"
-        className={styles.toggle}
+        className={`${styles.toggle} ${isOpen ? styles.toggleOpen : ""}`}
+        aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={isOpen}
         aria-controls="main-navigation-list"
         onClick={() => setOpenPath(isOpen ? null : pathname)}
       >
-        {isOpen ? "Закрыть" : "Меню"}
+        <span className={styles.burger} aria-hidden="true">
+          <span className={styles.line} />
+          <span className={styles.line} />
+          <span className={styles.line} />
+        </span>
       </button>
-
       <ul
         id="main-navigation-list"
         className={`${styles.list} ${isOpen ? styles.open : ""}`}

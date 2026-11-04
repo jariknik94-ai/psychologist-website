@@ -1,4 +1,4 @@
-import { ArticleCard } from "@/components/shared/ArticleCard/ArticleCard";
+import { ArticleMiniCard } from "@/components/shared/ArticleMiniCard/ArticleMiniCard";
 import { articles } from "@/data/articles";
 
 import styles from "./RelatedArticles.module.scss";
@@ -30,7 +30,7 @@ export function RelatedArticles({
       <ul className={styles.list}>
         {relatedArticles.map((article) => (
           <li key={article.slug} className={styles.item}>
-            <ArticleCard article={article} headingLevel="h3" />
+            <ArticleMiniCard article={article} />
           </li>
         ))}
       </ul>

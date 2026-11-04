@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
+import { GroupBanner } from "@/components/sections/services/GroupBanner/GroupBanner";
 import { ConsultationDetails } from "@/components/sections/services/ConsultationDetails/ConsultationDetails";
 import { Container } from "@/components/ui/Container/Container";
 import { site } from "@/data/site";
@@ -45,8 +45,8 @@ export default function ServicesPage() {
           </Link>
         </nav>
       </Container>
-
       <ConsultationDetails />
+      <GroupBanner />
     </main>
   );
 }

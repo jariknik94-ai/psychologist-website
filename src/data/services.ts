@@ -13,6 +13,6 @@ export const services: Service[] = [
     id: "group",
     title: site.group.title,
     description: site.group.description,
-    href: "/services#group",
+    href: "/services/group",
   },
 ];

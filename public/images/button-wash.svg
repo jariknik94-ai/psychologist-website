@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" preserveAspectRatio="none">
+  <defs>
+    <filter id="paper" x="-8%" y="-16%" width="116%" height="132%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".045 .09" numOctaves="3" seed="8" result="texture"/>
+      <feDisplacementMap in="SourceGraphic" in2="texture" scale="5"/>
+    </filter>
+  </defs>
+  <g filter="url(#paper)" fill="#d5aaa4">
+    <path opacity=".53" d="M15 34C19 17 37 20 52 15c16-6 32-1 48-4 18-3 33 2 50-1 17-3 32 2 49 0 18-2 32 4 48 2 18-2 29 5 42 9 13 3 18 13 17 22 8 8 3 20-6 25-6 12-21 10-35 14-16 4-30 1-46 4-18 3-32-2-49 1-17 3-34-2-52 0-18 2-32-3-49-2-15 1-28-4-41-7-12-2-17-11-16-20C4 50 7 41 15 34Z"/>
+    <path opacity=".16" d="M25 34c20-12 42-7 63-10 25-4 46 2 68-1 24-3 46 2 69 0 23-1 44 4 63 11 14 7 14 22 1 28-20 12-39 9-62 12-21 3-44-2-67 2-21 3-43-3-66-1-24 2-45-4-64-10-13-5-18-23-5-31Z"/>
+  </g>
+</svg>

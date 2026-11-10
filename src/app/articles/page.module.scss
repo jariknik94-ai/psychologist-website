@@ -1,4 +1,7 @@
+@use '../../styles/atmosphere' as atmosphere;
+
 .page {
+  @include atmosphere.page-background;
   padding-block: clamp(48px, 8vw, 96px);
 }
 
@@ -8,7 +11,8 @@
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 56px);
+  @include atmosphere.page-title;
+  font-size: clamp(38px, 5.5vw, 64px);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }

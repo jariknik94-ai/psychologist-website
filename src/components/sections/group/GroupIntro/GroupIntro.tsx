@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container/Container";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { site } from "@/data/site";
 
 import styles from "./GroupIntro.module.scss";
@@ -31,8 +32,8 @@ export function GroupIntro() {
           </p>
 
           <a href="#group-booking" className={styles.link}>
-            Узнать об участии
-            <span aria-hidden="true"> ↓</span>
+            <ActionIcon name="group" />
+            <span>Узнать об участии</span>
           </a>
         </div>
       </Container>

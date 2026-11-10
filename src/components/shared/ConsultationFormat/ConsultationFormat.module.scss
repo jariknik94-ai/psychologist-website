@@ -1,14 +1,16 @@
+@use '../../../styles/watercolor';
+@use '../../../styles/paper';
+
 .section {
-  padding: clamp(24px, 4vw, 40px);
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  background: var(--color-surface);
+  @include paper.long-card;
+  padding: clamp(32px, 4vw, 48px);
   scroll-margin-top: var(--anchor-offset);
 }
 
 .title {
   font-size: clamp(26px, 4vw, 36px);
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .description {
@@ -56,7 +58,7 @@
   min-height: 52px;
   padding: 14px 24px;
   border: 1px solid var(--color-primary);
-  border-radius: 8px;
+  border-radius: 16px;
   background: var(--color-primary);
   color: var(--color-surface);
   font-size: 16px;
@@ -73,6 +75,11 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 5px;
   }
+}
+
+.telegramLink {
+  @include watercolor.action;
+  max-width: 100%;
 }
 
 .hint {

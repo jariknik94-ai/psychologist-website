@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container/Container";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { site } from "@/data/site";
 
 import styles from "./AboutPreview.module.scss";
@@ -30,8 +31,8 @@ export function AboutPreview() {
               {site.approach}
             </p>
             <Link href="/about" className={styles.link}>
-              Подробнее обо мне
-              <span aria-hidden="true"> →</span>
+              <ActionIcon name="person" />
+              <span>Подробнее обо мне</span>
             </Link>
           </div>
         </div>

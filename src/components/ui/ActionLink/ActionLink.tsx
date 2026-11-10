@@ -19,7 +19,11 @@ export function ActionLink({
       href={href}
       className={`${styles.link} ${styles[variant]}`}
     >
-      {children}
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 5h16v11H9l-5 4V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 10h8M8 13h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+      <span>{children}</span>
     </Link>
   );
 }

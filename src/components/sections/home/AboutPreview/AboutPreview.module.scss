@@ -1,6 +1,9 @@
+@use '../../../../styles/watercolor';
+
 .section {
+  position: relative;
   padding-block: clamp(48px, 8vw, 96px);
-  background: var(--color-surface);
+  background: transparent;
 }
 
 .content {
@@ -20,8 +23,19 @@
 }
 
 .title {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(36px, 5vw, 56px);
   line-height: 1.2;
+
+  &::after {
+    display: block;
+    width: 112px;
+    height: 8px;
+    margin-top: 12px;
+    border-top: 2px solid var(--color-primary);
+    border-radius: 50%;
+    content: "";
+    transform: rotate(-3deg);
+  }
 }
 
 .intro {
@@ -52,6 +66,10 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 5px;
   }
+}
+
+.link {
+  @include watercolor.action;
 }
 
 @media (max-width: 640px) {

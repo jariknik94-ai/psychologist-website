@@ -1,4 +1,7 @@
+@use '../../styles/atmosphere' as atmosphere;
+
 .page {
+  @include atmosphere.page-background;
   display: flex;
   flex-direction: column;
 }

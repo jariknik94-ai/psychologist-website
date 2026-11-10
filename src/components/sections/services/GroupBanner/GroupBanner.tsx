@@ -28,7 +28,6 @@ export function GroupBanner() {
           <div className={styles.action}>
             <ActionLink href="/services/group">
               Посмотреть групповые встречи
-              <span aria-hidden="true">→</span>
             </ActionLink>
           </div>
         </div>

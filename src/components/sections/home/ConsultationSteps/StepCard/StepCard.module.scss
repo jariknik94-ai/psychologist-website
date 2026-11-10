@@ -1,16 +1,17 @@
+@use '../../../../../styles/paper';
+
 .card {
+  @include paper.card;
   height: 100%;
   padding: 28px;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
 }
 
 .number {
   display: inline-block;
   margin-bottom: 24px;
   color: var(--color-primary);
-  font-size: 32px;
+  font-family: var(--font-heading);
+  font-size: 40px;
   font-weight: 500;
   line-height: 1;
 }

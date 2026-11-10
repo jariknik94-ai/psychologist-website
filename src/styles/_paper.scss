@@ -1,0 +1,45 @@
+@mixin card($color: rgba(255, 250, 247, .86), $image: '/images/paper-card.webp') {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background:
+      linear-gradient($color, $color),
+      url('#{$image}') center / 100% 100% no-repeat;
+    background-blend-mode: multiply;
+    -webkit-mask: url('#{$image}') center / 100% 100% no-repeat;
+    mask: url('#{$image}') center / 100% 100% no-repeat;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: .9;
+    content: "";
+    pointer-events: none;
+  }
+}
+
+@mixin image-edge($image: '/images/paper-card.webp') {
+  -webkit-mask: url('#{$image}') center / 100% 100% no-repeat;
+  mask: url('#{$image}') center / 100% 100% no-repeat;
+}
+
+// Keep the torn edges at a fixed size while the centre grows with the content.
+@mixin long-card {
+  @include card;
+
+  &::before {
+    background: none;
+    background-blend-mode: normal;
+    border: 36px solid transparent;
+    border-image: url('/images/paper-card.webp') 75 fill / 36px / 0 stretch;
+    -webkit-mask: none;
+    mask: none;
+  }
+}

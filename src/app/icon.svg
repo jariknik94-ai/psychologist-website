@@ -5,11 +5,11 @@
   viewBox="0 0 80 80"
   fill="none"
 >
-  <rect width="80" height="80" rx="20" fill="#526B56" />
+  <rect width="80" height="80" rx="20" fill="#965B5F" />
 
   <g
     transform="translate(8 11) scale(.8)"
-    stroke="#FAF8F5"
+    stroke="#FFFAF7"
     stroke-width="4"
     stroke-linecap="round"
     stroke-linejoin="round"

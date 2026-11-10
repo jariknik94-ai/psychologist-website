@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: `Обо мне | ${site.name}`,
     description:
       "Знакомство с психологом: образование, подход к работе и форматы встреч.",
-    images: [{ url: "/images/social/about.jpg", alt: site.name }],
+    images: [{ url: "/images/social/about-rose.jpg", alt: site.name }],
   },
 
   twitter: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: `Обо мне | ${site.name}`,
     description:
       "Знакомство с психологом: образование, подход к работе и форматы встреч.",
-    images: ["/images/social/about.jpg"],
+    images: ["/images/social/about-rose.jpg"],
   },
 };
 

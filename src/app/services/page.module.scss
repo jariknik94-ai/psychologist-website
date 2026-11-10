@@ -1,4 +1,8 @@
+@use '../../styles/atmosphere' as atmosphere;
+@use '../../styles/watercolor';
+
 .page {
+  @include atmosphere.page-background;
   display: flex;
   flex-direction: column;
 }
@@ -8,7 +12,8 @@
 }
 
 .title {
-  font-size: clamp(32px, 5vw, 56px);
+  @include atmosphere.page-title;
+  font-size: clamp(38px, 5.5vw, 64px);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -52,6 +57,10 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 4px;
   }
+}
+
+.formatLink {
+  @include watercolor.action;
 }
 
 @media (max-width: 480px) {

@@ -1,9 +1,9 @@
+@use '../../../styles/paper';
+
 .toc {
+  @include paper.card;
   margin-top: 32px;
   padding: clamp(20px, 4vw, 28px);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
 }
 
 .title {

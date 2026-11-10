@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container/Container";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { site } from "@/data/site";
 
 import styles from "./Biography.module.scss";
@@ -29,8 +30,8 @@ export function Biography() {
           </div>
 
           <Link href="/contacts" className={styles.contactLink}>
-            Связаться со мной
-            <span aria-hidden="true"> →</span>
+            <ActionIcon name="conversation" />
+            <span>Связаться со мной</span>
           </Link>
         </div>
       </Container>

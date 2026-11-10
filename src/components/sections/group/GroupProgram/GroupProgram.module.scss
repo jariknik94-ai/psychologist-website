@@ -1,6 +1,8 @@
+@use '../../../../styles/paper';
+
 .section {
   padding-block: clamp(48px, 8vw, 80px);
-  background: var(--color-background-soft);
+  background: transparent;
 }
 
 .title {
@@ -16,11 +18,10 @@
 }
 
 .card {
+  @include paper.long-card;
   min-width: 0;
-  padding: 28px;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
+  padding: clamp(32px, 4vw, 40px);
+  overflow-wrap: anywhere;
 }
 
 .cardTitle {

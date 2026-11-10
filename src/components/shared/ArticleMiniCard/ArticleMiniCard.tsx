@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 
 import type { Article } from "@/types/article";
 
@@ -42,8 +43,8 @@ export function ArticleMiniCard({
           </h3>
 
           <span className={styles.readMore}>
-            Читать
-            <span aria-hidden="true"> →</span>
+            <ActionIcon name="book" />
+            <span>Читать</span>
           </span>
         </div>
       </Link>

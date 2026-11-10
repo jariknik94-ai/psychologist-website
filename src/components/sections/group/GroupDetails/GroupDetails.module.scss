@@ -1,13 +1,14 @@
+@use '../../../../styles/watercolor';
+@use '../../../../styles/paper';
+
 .section {
   padding-bottom: clamp(48px, 8vw, 96px);
   scroll-margin-top: var(--anchor-offset);
 }
 
 .panel {
-  padding: clamp(24px, 5vw, 48px);
-  border: 1px solid var(--color-border);
-  border-radius: 24px;
-  background: var(--color-surface);
+  @include paper.long-card;
+  padding: clamp(32px, 5vw, 48px);
 }
 
 .eyebrow {
@@ -22,6 +23,7 @@
 .title {
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .list {
@@ -61,7 +63,7 @@
   min-height: 52px;
   padding: 14px 24px;
   border: 1px solid var(--color-primary);
-  border-radius: 8px;
+  border-radius: 16px;
   background: var(--color-primary);
   color: var(--color-surface);
   text-align: center;
@@ -75,6 +77,11 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 5px;
   }
+}
+
+.telegramLink {
+  @include watercolor.action;
+  max-width: 100%;
 }
 
 .hint {

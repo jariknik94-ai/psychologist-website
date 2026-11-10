@@ -1,14 +1,20 @@
+@use '../../../styles/paper';
+
 .card {
   height: 100%;
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
 }
 
 .link {
+  @include paper.card;
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
+  @include paper.image-edge;
   color: var(--color-text);
   transition:
     border-color 0.2s ease,
@@ -22,18 +28,13 @@
   }
 
   &:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 8px 24px rgb(41 45 41 / 6%);
+    color: var(--color-primary-hover);
   }
 
   &:hover .title {
     color: var(--color-primary);
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 4px;
-  }
 }
 
 .cover {
@@ -42,8 +43,16 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 15px 15px 0 0;
+  border-radius: 0;
   background: var(--color-background-soft);
+  -webkit-mask-image: linear-gradient(#000, #000), url('/images/paper-card.webp');
+  mask-image: linear-gradient(#000, #000), url('/images/paper-card.webp');
+  -webkit-mask-size: 100% calc(100% - 32px), 100% 100%;
+  mask-size: 100% calc(100% - 32px), 100% 100%;
+  -webkit-mask-position: top, center;
+  mask-position: top, center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .image {
@@ -55,7 +64,10 @@
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: clamp(24px, 4vw, 36px);
+  min-width: 0;
+  padding: clamp(32px, 7%, 48px);
+  padding-bottom: max(64px, 12%);
+  overflow-wrap: anywhere;
 }
 
 .badge {

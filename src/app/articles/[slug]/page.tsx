@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { ArticleContent } from "@/components/shared/ArticleContent/ArticleContent";
 import { ArticleToc } from "@/components/shared/ArticleToc/ArticleToc";
 import { RelatedArticles } from "@/components/shared/RelatedArticles/RelatedArticles";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { Container } from "@/components/ui/Container/Container";
 import { articles } from "@/data/articles";
 import { site } from "@/data/site";
@@ -34,7 +35,7 @@ export async function generateMetadata({
 
   const title = `${article.title} | ${site.name}`;
   const image = article.cover ?? {
-    src: "/images/share.jpg",
+    src: "/images/share-rose.jpg",
     alt: `${site.name} — психолог`,
   };
 
@@ -96,8 +97,8 @@ export default async function ArticlePage({
       <Container>
         <article className={styles.article}>
           <Link href="/articles" className={styles.backLink}>
-            <span aria-hidden="true">←</span>
-            Все статьи
+            <ActionIcon name="book" />
+            <span>Все статьи</span>
           </Link>
 
           <header className={styles.header}>

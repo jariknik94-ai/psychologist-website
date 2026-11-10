@@ -1,5 +1,9 @@
+@use '../../../../styles/atmosphere' as atmosphere;
+@use '../../../../styles/watercolor';
+
 .section {
   padding-block: clamp(40px, 7vw, 80px);
+  background: transparent;
 }
 
 .content {
@@ -22,6 +26,7 @@
 }
 
 .title {
+  @include atmosphere.page-title;
   font-size: clamp(36px, 5vw, 60px);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -56,4 +61,8 @@
     outline-offset: 5px;
     border-radius: 2px;
   }
+}
+
+.link {
+  @include watercolor.action;
 }

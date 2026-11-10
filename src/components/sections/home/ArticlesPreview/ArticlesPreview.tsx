@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ArticleCard } from "@/components/shared/ArticleCard/ArticleCard";
 import { Container } from "@/components/ui/Container/Container";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { articles } from "@/data/articles";
 
 import styles from "./ArticlesPreview.module.scss";
@@ -34,8 +35,8 @@ export function ArticlesPreview() {
           </div>
 
           <Link href="/articles" className={styles.allLink}>
-            Все статьи
-            <span aria-hidden="true"> →</span>
+            <ActionIcon name="book" />
+            <span>Все статьи</span>
           </Link>
         </div>
 

@@ -27,7 +27,7 @@
 }
 
 .name {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 22px;
   font-weight: 400;
   line-height: 1.2;
@@ -41,7 +41,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .logo {
     gap: 10px;
   }

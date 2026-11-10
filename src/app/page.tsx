@@ -2,7 +2,6 @@ import { AboutPreview } from "@/components/sections/home/AboutPreview/AboutPrevi
 import { ArticlesPreview } from "@/components/sections/home/ArticlesPreview/ArticlesPreview";
 import { ConsultationSteps } from "@/components/sections/home/ConsultationSteps/ConsultationSteps";
 import { Hero } from "@/components/sections/home/Hero/Hero";
-import { ServicesPreview } from "@/components/sections/home/ServicesPreview/ServicesPreview";
 import { BookingSection } from "@/components/shared/BookingSection/BookingSection";
 import { FAQ } from "@/components/shared/FAQ/FAQ";
 
@@ -17,7 +16,6 @@ export default function HomePage() {
     >
       <Hero />
       <AboutPreview />
-      <ServicesPreview />
       <ConsultationSteps />
       <ArticlesPreview />
       <FAQ />

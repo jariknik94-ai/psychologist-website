@@ -1,0 +1,27 @@
+@mixin page-background {
+  position: relative;
+  isolation: isolate;
+  background: #f5ede8;
+
+  &::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background: url('/images/hero-wide.webp') center / contain no-repeat;
+    content: "";
+    pointer-events: none;
+  }
+
+  @media (max-width: 800px) and (orientation: portrait) {
+    &::before {
+      background-image: url('/images/hero-mobile.webp');
+    }
+  }
+}
+
+@mixin page-title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  overflow-wrap: break-word;
+}

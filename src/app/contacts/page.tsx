@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: `Контакты | ${site.name}`,
     description:
       "Телефон и Telegram для связи и записи на встречу.",
-    images: [{ url: "/images/social/contacts.jpg", alt: site.name }],
+    images: [{ url: "/images/social/contacts-rose.jpg", alt: site.name }],
   },
 
   twitter: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: `Контакты | ${site.name}`,
     description:
       "Телефон и Telegram для связи и записи на встречу.",
-    images: ["/images/social/contacts.jpg"],
+    images: ["/images/social/contacts-rose.jpg"],
   },
 };
 

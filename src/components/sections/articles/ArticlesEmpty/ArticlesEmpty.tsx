@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 
 import styles from "./ArticlesEmpty.module.scss";
 
@@ -15,8 +16,8 @@ export function ArticlesEmpty() {
       </p>
 
       <Link href="/contacts" className={styles.link}>
-        Задать вопрос
-        <span aria-hidden="true"> →</span>
+        <ActionIcon name="conversation" />
+        <span>Задать вопрос</span>
       </Link>
     </div>
   );

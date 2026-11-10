@@ -1,3 +1,5 @@
+@use '../../../../styles/watercolor';
+
 .section {
   padding-block: clamp(48px, 8vw, 96px);
 }
@@ -11,7 +13,7 @@
 }
 
 .title {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(32px, 4.5vw, 48px);
   line-height: 1.2;
 }
 
@@ -50,6 +52,10 @@
 
 .item {
   min-width: 0;
+}
+
+.allLink {
+  @include watercolor.action;
 }
 
 @media (max-width: 640px) {

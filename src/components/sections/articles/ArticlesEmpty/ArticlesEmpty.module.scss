@@ -1,8 +1,9 @@
+@use '../../../../styles/watercolor';
+@use '../../../../styles/paper';
+
 .block {
+  @include paper.card;
   padding: clamp(24px, 5vw, 48px);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
 }
 
 .title {
@@ -36,4 +37,8 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 5px;
   }
+}
+
+.link {
+  @include watercolor.action;
 }

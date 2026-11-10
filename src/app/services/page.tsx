@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Узнайте об онлайн-консультациях и очных групповых сессиях.",
     images: [
       {
-        url: "/images/social/services.jpg",
+        url: "/images/social/services-rose.jpg",
         alt: `${site.name} — психолог`,
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: `Консультации | ${site.name}`,
     description:
       "Узнайте об онлайн-консультациях и очных групповых сессиях.",
-    images: ["/images/social/services.jpg"],
+    images: ["/images/social/services-rose.jpg"],
   },
 };
 
@@ -61,13 +61,19 @@ export default function ServicesPage() {
           aria-label="Форматы консультаций"
         >
           <Link href="#online" className={styles.formatLink}>
-            Онлайн
-            <span aria-hidden="true">↓</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="12" rx="1" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M2 20h20l-2-4H4l-2 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+            <span>Онлайн</span>
           </Link>
 
           <Link href="#group" className={styles.formatLink}>
-            Групповые сессии
-            <span aria-hidden="true">↓</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M6 21v-2a6 6 0 0 1 12 0v2M4 10a3 3 0 0 0 0 6M20 10a3 3 0 0 1 0 6M1 21v-1a5 5 0 0 1 3-5M23 21v-1a5 5 0 0 0-3-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+            <span>Групповые сессии</span>
           </Link>
         </nav>
       </Container>

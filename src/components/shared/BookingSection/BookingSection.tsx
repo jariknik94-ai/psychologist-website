@@ -24,7 +24,6 @@ export function BookingSection() {
           <div className={styles.action}>
             <ActionLink href="/contacts">
               Перейти к контактам
-              <span aria-hidden="true">→</span>
             </ActionLink>
           </div>
         </div>

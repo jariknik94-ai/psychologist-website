@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Узнайте об онлайн-консультациях и очных групповых сессиях.",
     images: [
       {
-        url: "/images/share.png",
+        url: "/images/social/services.png",
         alt: `${site.name} — психолог`,
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: `Консультации | ${site.name}`,
     description:
       "Узнайте об онлайн-консультациях и очных групповых сессиях.",
-    images: ["/images/share.png"],
+    images: ["/images/social/services.png"],
   },
 };
 

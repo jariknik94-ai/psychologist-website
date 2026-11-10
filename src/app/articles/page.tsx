@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Материалы о чувствах, отношениях и заботе о себе.",
     images: [
       {
-        url: "/images/share.png",
+        url: "/images/social/articles.png",
         alt: `${site.name} — психолог`,
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: `Статьи | ${site.name}`,
     description:
       "Материалы о чувствах, отношениях и заботе о себе.",
-    images: ["/images/share.png"],
+    images: ["/images/social/articles.png"],
   },
 };
 

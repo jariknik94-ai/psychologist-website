@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Онлайн-консультации и очные групповые сессии. Информация о психологе и контакты для записи.",
     images: [
       {
-        url: "/images/share.png",
+        url: "/images/share.jpg",
         alt: "Анастасия Никуличева — психолог",
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: `${site.name} | Психолог`,
     description:
       "Онлайн-консультации и очные групповые сессии.",
-    images: ["/images/share.png"],
+    images: ["/images/share.jpg"],
   },
 
   icons: {

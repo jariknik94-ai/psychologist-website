@@ -109,7 +109,7 @@ src/
 ## 🖼 Изображения и иконки
 
 - `public/images/psychologist.jpg` — фотография на главной.
-- `public/images/share.png` — обложка для превью ссылки на сайт.
+- `public/images/share.jpg` — обложка для превью ссылки на сайт.
 - `public/images/articles/` — обложки статей.
 - `public/icons/` — иконки для устройств.
 - `src/app/icon.svg` — SVG-иконка сайта.

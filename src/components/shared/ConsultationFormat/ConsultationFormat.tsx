@@ -46,6 +46,7 @@ export function ConsultationFormat({
           className={styles.telegramLink}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Написать в Telegram: ${title}. Откроется в новой вкладке`}
         >
           <Icon name="telegram" />
           <span>Написать в Telegram</span>

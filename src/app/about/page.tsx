@@ -10,10 +10,29 @@ import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Обо мне",
-  description:
-    `${site.name} — психолог. ${site.format}.`,
+  description: `${site.name} — психолог. ${site.format}.`,
+
   alternates: {
     canonical: "/about",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "/about",
+    siteName: `${site.name} | Психолог`,
+    title: `Обо мне | ${site.name}`,
+    description:
+      "Знакомство с психологом: образование, подход к работе и форматы встреч.",
+    images: [{ url: "/images/share.png", alt: site.name }],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Обо мне | ${site.name}`,
+    description:
+      "Знакомство с психологом: образование, подход к работе и форматы встреч.",
+    images: ["/images/share.png"],
   },
 };
 

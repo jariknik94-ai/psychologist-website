@@ -4,15 +4,41 @@ import { ArticlesEmpty } from "@/components/sections/articles/ArticlesEmpty/Arti
 import { ArticleCard } from "@/components/shared/ArticleCard/ArticleCard";
 import { Container } from "@/components/ui/Container/Container";
 import { articles } from "@/data/articles";
-
+import { site } from "@/data/site";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Статьи",
+
   description:
     "Материалы о чувствах, отношениях и заботе о себе.",
+
   alternates: {
     canonical: "/articles",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "/articles",
+    siteName: `${site.name} | Психолог`,
+    title: `Статьи | ${site.name}`,
+    description:
+      "Материалы о чувствах, отношениях и заботе о себе.",
+    images: [
+      {
+        url: "/images/share.png",
+        alt: `${site.name} — психолог`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Статьи | ${site.name}`,
+    description:
+      "Материалы о чувствах, отношениях и заботе о себе.",
+    images: ["/images/share.png"],
   },
 };
 

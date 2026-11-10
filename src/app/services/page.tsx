@@ -9,10 +9,36 @@ import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Консультации",
+
   description:
-    `${site.format}. Информация о консультациях и запись к психологу.`,
+    "Онлайн-консультации и очные групповые сессии с психологом Анастасией Никуличевой.",
+
   alternates: {
     canonical: "/services",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "/services",
+    siteName: `${site.name} | Психолог`,
+    title: `Консультации | ${site.name}`,
+    description:
+      "Узнайте об онлайн-консультациях и очных групповых сессиях.",
+    images: [
+      {
+        url: "/images/share.png",
+        alt: `${site.name} — психолог`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Консультации | ${site.name}`,
+    description:
+      "Узнайте об онлайн-консультациях и очных групповых сессиях.",
+    images: ["/images/share.png"],
   },
 };
 

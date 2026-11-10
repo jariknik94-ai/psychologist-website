@@ -9,10 +9,36 @@ import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Очные групповые сессии",
+
   description:
     `Очные групповые сессии с психологом ${site.name}. Информация о формате и контакты для записи.`,
+
   alternates: {
     canonical: "/services/group",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "/services/group",
+    siteName: `${site.name} | Психолог`,
+    title: `Очные групповые сессии | ${site.name}`,
+    description:
+      "Информация о групповых встречах и контакты для записи.",
+    images: [
+      {
+        url: "/images/share.png",
+        alt: `${site.name} — психолог`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Очные групповые сессии | ${site.name}`,
+    description:
+      "Информация о групповых встречах и контакты для записи.",
+    images: ["/images/share.png"],
   },
 };
 

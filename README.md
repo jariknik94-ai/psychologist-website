@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Сайт психолога Анастасии Никуличевой
 
-## Getting Started
+Персональный сайт психолога: информация о специалисте, онлайн-консультациях и очных групповых встречах, статьи и контакты для записи.
 
-First, run the development server:
+## Технологии
+
+- Next.js (App Router)
+- React и TypeScript
+- SCSS Modules
+- Vercel — размещение сайта
+
+## Запуск проекта
+
+Понадобится установленный Node.js.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Проверка проекта
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+Для запуска собранной версии выполните `npm run build`, затем `npm run start`.
 
-To learn more about Next.js, take a look at the following resources:
+## Страницы
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Адрес | Содержимое |
+| --- | --- |
+| `/` | Главная |
+| `/about` | О психологе |
+| `/services` | Форматы консультаций |
+| `/services/group` | Групповые встречи |
+| `/articles` | Список статей |
+| `/articles/[slug]` | Отдельная статья |
+| `/contacts` | Контакты |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура проекта
 
-## Deploy on Vercel
+```text
+public/
+├── icons/                  # Иконки для разных устройств
+└── images/
+    ├── articles/           # Обложки статей
+    ├── psychologist.jpg    # Фото на главной
+    └── share.png           # Изображение для превью сайта
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+src/
+├── app/                    # Страницы, метаданные, глобальные стили
+├── components/
+│   ├── layout/             # Шапка, подвал, навигация
+│   ├── sections/           # Блоки страниц
+│   ├── shared/             # Общие блоки и карточки
+│   └── ui/                 # Базовые элементы интерфейса
+├── data/                   # Данные и тексты сайта
+├── types/                  # Типы TypeScript
+└── utils/                  # Вспомогательные функции
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Стили страниц и компонентов находятся в файлах `*.module.scss`. Общие стили и переменные — в `src/app/globals.scss`.
+
+## Данные специалиста
+
+Имя, контакты, сведения о психологе и условия встреч находятся в `src/data/site.ts`. Данные онлайн-консультаций хранятся в `site.online`, групповых встреч — в `site.group`.
+
+Часть сведений пока заполнена заглушками. Новую информацию и формулировки необходимо согласовать со специалистом.
+
+## Статьи
+
+Статьи находятся в `src/data/articles.ts`, а их типы — в `src/types/article.ts`. Для новой статьи добавьте объект в массив `articles`:
+
+```ts
+{
+  slug: "article-example",
+  title: "Название статьи",
+  excerpt: "Краткое описание статьи.",
+  status: "draft",
+  cover: {
+    src: "/images/articles/article-example.png",
+    alt: "",
+  },
+  content: [
+    { type: "paragraph", text: "Вступительный абзац." },
+    { type: "heading", text: "Название раздела" },
+    { type: "paragraph", text: "Текст раздела." },
+    { type: "list", items: ["Первый пункт", "Второй пункт"] },
+    { type: "quote", text: "Текст цитаты." },
+  ],
+},
+```
+
+`slug` должен быть уникальным: он определяет адрес статьи. Например, `article-example` создаст страницу `/articles/article-example`.
+
+Обложка необязательна. Для декоративного изображения оставьте `alt` пустым; если изображение передаёт важную информацию, добавьте её описание. Оглавление появляется автоматически при наличии двух или более подзаголовков.
+
+### Черновики
+
+Статус `draft` помечает статью как черновик и добавляет для поисковых систем указание `noindex`. **Черновики видны посетителям** и доступны по ссылке.
+
+Для готового материала установите `status: "published"`. После следующей сборки опубликованная статья появится в карте сайта.
+
+## Изображения и иконки
+
+- `public/images/psychologist.jpg` — фотография на главной.
+- `public/images/share.png` — обложка для превью ссылки на сайт.
+- `public/images/articles/` — обложки статей.
+- `public/icons/` — иконки для устройств.
+- `src/app/icon.svg` — SVG-иконка сайта.
+
+При смене имени файла или расширения обновите путь в соответствующем компоненте или файле данных.
+
+## Метаданные и карта сайта
+
+- `src/app/layout.tsx` — общие метаданные.
+- `src/app/articles/[slug]/page.tsx` — метаданные статей.
+- `src/app/sitemap.ts` — карта сайта.
+- `src/app/robots.ts` — правила для поисковых роботов.
+- `src/app/manifest.ts` — манифест для устройств.
+
+Адрес сайта указан в `layout.tsx`, `sitemap.ts` и `robots.ts`. При смене домена обновите его во всех трёх файлах.
+
+## Публикация
+
+Проект подключён к GitHub и Vercel. После проверки отправьте изменения в репозиторий:
+
+```bash
+git add .
+git commit -m "Describe your changes"
+git push
+```
+
+После отправки Vercel создаст новую сборку. Её статус можно проверить в панели проекта Vercel.

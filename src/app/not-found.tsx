@@ -1,14 +1,15 @@
 import { ActionLink } from "@/components/ui/ActionLink/ActionLink";
-
 import { Container } from "@/components/ui/Container/Container";
 
 import styles from "./not-found.module.scss";
 
 export default function NotFound() {
   return (
-    <main id="main-content"
-  className={styles.page}
-  tabIndex={-1}>
+    <main
+      id="main-content"
+      className={styles.page}
+      tabIndex={-1}
+    >
       <Container>
         <div className={styles.content}>
           <p className={styles.code}>404</p>
@@ -24,13 +25,11 @@ export default function NotFound() {
           </p>
 
           <div className={styles.actions}>
-            <div className={styles.actions}>
-              <ActionLink href="/">На главную</ActionLink>
+            <ActionLink href="/">На главную</ActionLink>
 
-              <ActionLink href="/contacts" variant="secondary">
-                Контакты
-              </ActionLink>
-            </div>
+            <ActionLink href="/contacts" variant="secondary">
+              Контакты
+            </ActionLink>
           </div>
         </div>
       </Container>

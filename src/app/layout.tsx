@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-
+import { siteUrl } from "@/data/config";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
 import { site } from "@/data/site";
@@ -8,9 +8,7 @@ import { site } from "@/data/site";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://psychologist-website-brown.vercel.app",
-  ),
+  metadataBase: new URL(siteUrl),
 
   title: {
     default: `${site.name} | Психолог`,

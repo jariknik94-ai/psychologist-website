@@ -1,27 +1,26 @@
 import type { MetadataRoute } from "next";
 
 import { articles } from "@/data/articles";
-
-const baseUrl = "https://psychologist-website-brown.vercel.app";
+import { siteUrl } from "@/data/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     "",
     "/about",
     "/services",
+    "/services/group",
     "/articles",
     "/contacts",
-    "/services/group",
   ];
 
   const staticPages: MetadataRoute.Sitemap = pages.map((path) => ({
-    url: `${baseUrl}${path}`,
+    url: `${siteUrl}${path}`,
   }));
 
   const articlePages: MetadataRoute.Sitemap = articles
     .filter((article) => article.status === "published")
     .map((article) => ({
-      url: `${baseUrl}/articles/${article.slug}`,
+      url: `${siteUrl}/articles/${article.slug}`,
     }));
 
   return [...staticPages, ...articlePages];

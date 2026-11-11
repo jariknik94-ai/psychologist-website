@@ -35,7 +35,7 @@ export async function generateMetadata({
 
   const title = `${article.title} | ${site.name}`;
   const image = article.cover ?? {
-    src: "/images/share-rose.jpg",
+    src: "/images/share-preview.jpg",
     alt: `${site.name} — психолог`,
   };
 

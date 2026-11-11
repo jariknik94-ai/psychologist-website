@@ -42,3 +42,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px) {
+  .description { font-size: 18px; }
+}
+
+@media (max-width: 800px) {
+  .card::before {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

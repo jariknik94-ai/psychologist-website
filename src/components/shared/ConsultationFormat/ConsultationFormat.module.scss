@@ -100,3 +100,14 @@
     transition: none;
   }
 }
+
+@media (max-width: 640px) {
+  .label, .hint { font-size: 16px; }
+}
+
+@media (max-width: 800px) {
+  .section::before {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

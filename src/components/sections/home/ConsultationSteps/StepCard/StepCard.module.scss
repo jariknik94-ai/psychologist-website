@@ -28,3 +28,7 @@
   font-size: 16px;
   line-height: 1.7;
 }
+
+@media (max-width: 640px) {
+  .description { font-size: 18px; }
+}

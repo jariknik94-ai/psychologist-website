@@ -1,12 +1,12 @@
 :root {
   --color-background: #faf5f1;
   --color-surface: #fffaf7;
-  --color-text: #372b29;
-  --color-text-muted: #6c5754;
+  --color-text: #302321;
+  --color-text-muted: #594441;
   --color-primary: #965b5f;
   --color-border: #e8d7d1;
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: var(--font-manrope), Arial, sans-serif;
+  --font-heading: var(--font-lora), Georgia, serif;
   --container-width: 1200px;
   --color-background-soft: #f3e5df;
   --color-accent-panel: rgba(222, 193, 188, .38);
@@ -26,14 +26,34 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.7;
   display: flex;
   flex-direction: column;
   min-height: 100svh;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: url('/images/hero-wide.webp') center / contain no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+  body::before {
+    background-image: url('/images/hero-mobile.webp');
+    background-position: center top;
+    background-size: contain;
+  }
 }
 
 h1,
@@ -101,5 +121,11 @@ svg {
     outline: 2px solid var(--color-text);
     outline-offset: 4px;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --color-text-muted: #4c3936;
   }
 }

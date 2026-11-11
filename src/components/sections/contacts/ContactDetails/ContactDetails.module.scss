@@ -105,3 +105,7 @@
     transition: none;
   }
 }
+
+@media (max-width: 640px) {
+  .label { font-size: 16px; }
+}

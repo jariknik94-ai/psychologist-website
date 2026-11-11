@@ -37,7 +37,7 @@ export function Hero() {
           </div>
           <div className={styles.photoFrame}>
             <div className={styles.photo}>
-              <Image src="/images/psychologist.jpg" alt="Психолог Анастасия Никуличева" fill sizes="(max-width: 800px) 90vw, (max-width: 1248px) 42vw, 500px" fetchPriority="high" className={styles.image} />
+              <Image src="/images/psychologist.jpg" alt="Психолог Анастасия Никуличева" fill sizes="(max-width: 800px) 90vw, (max-width: 1248px) 42vw, 500px" loading="eager" fetchPriority="high" className={styles.image} />
             </div>
           </div>
         </div>

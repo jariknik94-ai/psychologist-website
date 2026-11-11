@@ -76,7 +76,7 @@
   border-radius: 999px;
   background: var(--color-background-soft);
   color: var(--color-primary);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -99,11 +99,16 @@
 .caption {
   margin-top: auto;
   color: var(--color-text-muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .link {
     transition: none;
   }
+}
+
+@media (max-width: 640px) {
+  .excerpt { font-size: 18px; }
+  .caption { font-size: 16px; }
 }

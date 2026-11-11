@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import localFont from "next/font/local";
 import { siteUrl } from "@/data/config";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
 import { site } from "@/data/site";
 
 import "./globals.scss";
+
+const manrope = localFont({
+  src: "./fonts/Manrope-Variable.ttf",
+  variable: "--font-manrope",
+  weight: "200 800",
+  display: "swap",
+});
+
+const lora = localFont({
+  src: [
+    { path: "./fonts/Lora-Variable.ttf", style: "normal", weight: "400 700" },
+    { path: "./fonts/Lora-Italic-Variable.ttf", style: "italic", weight: "400 700" },
+  ],
+  variable: "--font-lora",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -84,7 +101,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ru">
+    <html lang="ru" data-scroll-behavior="smooth" className={`${manrope.variable} ${lora.variable}`}>
       <body>
         <a href="#main-content" className="skip-link">
           Перейти к содержимому

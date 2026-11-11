@@ -32,7 +32,7 @@
 .description {
   margin-top: 12px;
   color: var(--color-text-muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -49,7 +49,7 @@
 .link {
   display: inline-block;
   padding-block: 8px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   text-underline-offset: 5px;
   overflow-wrap: anywhere;
@@ -86,7 +86,7 @@
   padding-top: 24px;
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 @media (max-width: 800px) {
@@ -135,4 +135,8 @@
   .iconBadge {
     transition: none;
   }
+}
+
+@media (max-width: 640px) {
+  .description, .link, .copyright { font-size: 16px; }
 }

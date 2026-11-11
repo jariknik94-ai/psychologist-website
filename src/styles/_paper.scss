@@ -9,19 +9,30 @@
 
   &::before {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     inset: 0;
-    background:
-      linear-gradient($color, $color),
-      url('#{$image}') center / 100% 100% no-repeat;
-    background-blend-mode: multiply;
-    -webkit-mask: url('#{$image}') center / 100% 100% no-repeat;
-    mask: url('#{$image}') center / 100% 100% no-repeat;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    background: url('#{$image}') center / 100% 100% no-repeat;
     opacity: .9;
     content: "";
     pointer-events: none;
+  }
+
+  @supports ((-webkit-mask-image: url('/images/paper-card.webp')) or (mask-image: url('/images/paper-card.webp'))) {
+    &::before {
+      background:
+        linear-gradient($color, $color),
+        url('#{$image}') center / 100% 100% no-repeat;
+      background-blend-mode: multiply;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      -webkit-mask: url('#{$image}') center / 100% 100% no-repeat;
+      mask: url('#{$image}') center / 100% 100% no-repeat;
+    }
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
   }
 }
 

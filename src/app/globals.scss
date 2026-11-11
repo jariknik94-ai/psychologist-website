@@ -50,6 +50,10 @@ body::before {
 
 @media (max-width: 800px) and (orientation: portrait) {
   body::before {
+    // Keep the image size stable when the browser's address bar hides on scroll.
+    bottom: auto;
+    height: 100vh;
+    height: 100lvh;
     background-image: url('/images/hero-mobile.webp');
     background-position: center top;
     background-size: contain;

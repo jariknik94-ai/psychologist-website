@@ -56,7 +56,7 @@ body::before {
     height: 100lvh;
     background-image: url('/images/hero-mobile.webp');
     background-position: center top;
-    background-size: contain;
+    background-size: 100% auto;
   }
 }
 

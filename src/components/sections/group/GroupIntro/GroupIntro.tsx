@@ -15,8 +15,8 @@ export function GroupIntro() {
       <Container>
         <div className={styles.content}>
           <Link href="/services" className={styles.backLink}>
-            <span aria-hidden="true">←</span>
-            Все консультации
+            <ActionIcon name="conversation" />
+            <span>Все консультации</span>
           </Link>
 
           <p className={styles.eyebrow}>

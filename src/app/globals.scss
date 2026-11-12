@@ -42,21 +42,32 @@ body {
 body::before {
   position: fixed;
   z-index: -1;
-  inset: 0;
-  background: url('/images/hero-wide.webp') center / contain no-repeat;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  height: 100lvh;
+  background: url('/images/hero-wide.webp') center / cover no-repeat;
   content: "";
   pointer-events: none;
 }
 
+@media (min-width: 801px) and (max-width: 1440px) and (min-height: 600px) and (orientation: landscape) {
+  body::before {
+    background-image: url('/images/hero-tablet-landscape.webp');
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1366px) and (orientation: portrait) {
+  body::before {
+    background-image: url('/images/hero-tablet-portrait.webp');
+  }
+}
+
 @media (max-width: 800px) and (orientation: portrait) {
   body::before {
-    // Keep the image size stable when the browser's address bar hides on scroll.
-    bottom: auto;
-    height: 100vh;
-    height: 100lvh;
     background-image: url('/images/hero-mobile.webp');
     background-position: center top;
-    background-size: 100% auto;
   }
 }
 

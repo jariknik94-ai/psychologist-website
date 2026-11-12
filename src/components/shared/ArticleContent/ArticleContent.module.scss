@@ -59,8 +59,10 @@
     font-size: 18px;
 
     blockquote {
+      max-width: 100%;
       padding: 20px;
       font-size: 20px;
+      overflow-wrap: anywhere;
     }
   }
 }

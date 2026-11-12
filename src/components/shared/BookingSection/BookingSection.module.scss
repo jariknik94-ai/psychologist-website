@@ -41,3 +41,9 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 1366px), (hover: none) and (pointer: coarse) {
+  .action {
+    padding-inline: 12px;
+  }
+}

@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  @include paper.image-edge;
   color: var(--color-text);
   transition:
     border-color 0.2s ease,
@@ -40,23 +39,17 @@
 .cover {
   position: relative;
   flex-shrink: 0;
-  width: 100%;
+  width: calc(100% - 48px);
   aspect-ratio: 16 / 10;
+  margin: 32px 24px 0;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 10px 10px 4px 4px;
   background: var(--color-background-soft);
-  -webkit-mask-image: linear-gradient(#000, #000), url('/images/paper-card.webp');
-  mask-image: linear-gradient(#000, #000), url('/images/paper-card.webp');
-  -webkit-mask-size: 100% calc(100% - 32px), 100% 100%;
-  mask-size: 100% calc(100% - 32px), 100% 100%;
-  -webkit-mask-position: top, center;
-  mask-position: top, center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
 }
 
 .image {
   object-fit: cover;
+  object-position: center;
 }
 
 .content {

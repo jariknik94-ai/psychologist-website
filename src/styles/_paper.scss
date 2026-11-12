@@ -1,4 +1,4 @@
-@mixin card($color: rgba(255, 250, 247, .86), $image: '/images/paper-card.webp') {
+@mixin card($color: rgba(255, 250, 247, .86), $image: '/images/watercolor-paper.svg') {
   position: relative;
   isolation: isolate;
   border: 0;
@@ -12,12 +12,28 @@
     z-index: 0;
     inset: 0;
     background: url('#{$image}') center / 100% 100% no-repeat;
-    opacity: .9;
+    opacity: .86;
+    filter: drop-shadow(0 7px 9px rgba(105, 69, 62, .10));
     content: "";
     pointer-events: none;
   }
 
-  @supports ((-webkit-mask-image: url('/images/paper-card.webp')) or (mask-image: url('/images/paper-card.webp'))) {
+  // A soft shadow keeps the paper separate from the background.
+  &::after {
+    position: absolute;
+    z-index: -1;
+    right: 8%;
+    bottom: -5px;
+    left: 8%;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(105, 69, 62, .10);
+    filter: blur(10px);
+    content: "";
+    pointer-events: none;
+  }
+
+  @supports ((-webkit-mask-image: url('/images/watercolor-paper.svg')) or (mask-image: url('/images/watercolor-paper.svg'))) {
     &::before {
       background:
         linear-gradient($color, $color),
@@ -30,18 +46,31 @@
     }
   }
 
+  // Avoid rectangular filter layers and extra shadows on touch devices.
+  @media (max-width: 1366px), (hover: none) and (pointer: coarse) {
+    &::before {
+      filter: none;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
   > * {
     position: relative;
     z-index: 1;
   }
 }
 
-@mixin image-edge($image: '/images/paper-card.webp') {
+@mixin image-edge($image: '/images/watercolor-paper.svg') {
   -webkit-mask: url('#{$image}') center / 100% 100% no-repeat;
   mask: url('#{$image}') center / 100% 100% no-repeat;
 }
 
-// Keep the torn edges at a fixed size while the centre grows with the content.
+// Keep the paper edges at a fixed size while the centre grows with the content.
 @mixin long-card {
   @include card;
 
@@ -49,7 +78,7 @@
     background: none;
     background-blend-mode: normal;
     border: 36px solid transparent;
-    border-image: url('/images/paper-card.webp') 75 fill / 36px / 0 stretch;
+    border-image: url('/images/watercolor-paper.svg') 75 fill / 36px / 0 stretch;
     -webkit-mask: none;
     mask: none;
   }

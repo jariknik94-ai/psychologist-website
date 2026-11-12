@@ -56,17 +56,17 @@
 }
 
 .cover {
-  @include paper.image-edge;
   position: relative;
   aspect-ratio: 16 / 10;
   margin-top: 32px;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 8px;
   background: var(--color-background-soft);
 }
 
 .coverImage {
   object-fit: cover;
+  object-position: center;
 }
 
 
@@ -78,5 +78,16 @@
 @media (max-width: 480px) {
   .excerpt {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .article {
+    padding: 36px clamp(28px, 7vw, 40px) 44px;
+  }
+
+  .backLink {
+    max-width: calc(100% - 20px);
+    margin-left: 10px;
   }
 }

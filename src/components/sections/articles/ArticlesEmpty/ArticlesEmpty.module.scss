@@ -42,3 +42,10 @@
 .link {
   @include watercolor.action;
 }
+
+@media (max-width: 1366px), (hover: none) and (pointer: coarse) {
+  .link {
+    max-width: calc(100% - 20px);
+    margin-inline: 10px;
+  }
+}

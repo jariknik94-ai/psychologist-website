@@ -25,7 +25,7 @@ export function ArticleMiniCard({
             src={article.cover?.src ?? "/icons/icon-192.png"}
             alt=""
             fill
-            sizes="96px"
+            sizes="120px"
             className={styles.image}
           />
         </div>

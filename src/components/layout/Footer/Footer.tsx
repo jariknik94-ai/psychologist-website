@@ -1,13 +1,18 @@
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container/Container";
-import { Icon } from "@/components/ui/Icon/Icon";
+import { FooterContact } from "./FooterContact/FooterContact";
 import { Logo } from "@/components/ui/Logo/Logo";
 import { site } from "@/data/site";
 
 import styles from "./Footer.module.scss";
 
 export function Footer() {
+  const unavailableContacts = [
+    !site.max.href && "MAX",
+    !site.email.href && "почта",
+  ].filter(Boolean);
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -21,6 +26,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Навигация в подвале">
+            <h2 className={styles.columnTitle}>Разделы</h2>
             <ul className={styles.links}>
               <li>
                 <Link href="/about" className={styles.link}>
@@ -49,34 +55,22 @@ export function Footer() {
           </nav>
 
           <div className={styles.contacts}>
-            <h2 className={styles.contactsTitle}>
-              Связаться со мной
-            </h2>
-
-            <a
-              href={site.phone.href}
-              className={`${styles.link} ${styles.contactLink}`}
-            >
-              <span className={styles.iconBadge}>
-                <Icon name="phone" />
-              </span>
-
-              <span>{site.phone.label}</span>
-            </a>
-
-            <a
-              href={site.telegram.href}
-              className={`${styles.link} ${styles.contactLink}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Telegram Анастасии — откроется в новой вкладке"
-            >
-              <span className={styles.iconBadge}>
-                <Icon name="telegram" />
-              </span>
-
-              <span>{site.telegram.label}</span>
-            </a>
+            <h2 className={styles.columnTitle}>Связаться со мной</h2>
+            <div className={styles.contactList}>
+              <FooterContact name="phone" title="Телефон" value={site.phone.label} href={site.phone.href} />
+              <FooterContact name="telegram" title="Telegram" value={site.telegram.label} href={site.telegram.href} external />
+              <FooterContact name="vk" title="ВКонтакте" value={site.vk.label} href={site.vk.href} external />
+              <FooterContact name="max" title="MAX" value={site.max.label} href={site.max.href} external />
+              <FooterContact name="email" title="Почта" value={site.email.label} href={site.email.href} />
+            </div>
+            {unavailableContacts.length > 0 && (
+              <p className={styles.pendingNote}>
+                {unavailableContacts.join(" и ")} — контакты уточняются
+              </p>
+            )}
+            <Link href="/contacts" className={styles.allContacts}>
+              Все контакты
+            </Link>
           </div>
         </div>
 

@@ -15,17 +15,16 @@ export function WorkApproach() {
             Подход к работе
           </h2>
 
-          <p className={styles.description}>
-            {site.approach}
-          </p>
-
-          <h3 className={styles.subtitle}>
-            С какими запросами можно обратиться
-          </h3>
-
-          <p className={styles.description}>
-            {site.requests}
-          </p>
+          <div className={styles.grid}>
+            <div className={styles.card}>
+              <h3 className={styles.subtitle}>Как я работаю</h3>
+              <p className={styles.description}>{site.approach}</p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.subtitle}>С какими запросами можно обратиться</h3>
+              <p className={styles.description}>{site.requests}</p>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

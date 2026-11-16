@@ -1,7 +1,7 @@
 import styles from "./Icon.module.scss";
 
 type IconProps = {
-  name: "phone" | "telegram";
+  name: "phone" | "telegram" | "email" | "vk";
 };
 
 export function Icon({ name }: IconProps) {
@@ -50,6 +50,18 @@ export function Icon({ name }: IconProps) {
             strokeWidth="1.7"
             strokeLinecap="round"
           />
+        </>
+      )}
+      {name === "email" && (
+        <>
+          <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
+          <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      )}
+      {name === "vk" && (
+        <>
+          <rect x="2.5" y="3.5" width="19" height="17" rx="5" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M5.7 8.3c.5 3.6 2.2 6 5.3 6.8V8.3m0 5.1c1.8-.3 3.6-2.3 4.5-5.1m-3.8 4.5c1.8.3 3.7 1.7 4.7 3.2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
         </>
       )}
     </svg>

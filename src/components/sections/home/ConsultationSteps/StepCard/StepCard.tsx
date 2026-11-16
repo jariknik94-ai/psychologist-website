@@ -17,7 +17,7 @@ export function StepCard({
         {String(number).padStart(2, "0")}
       </span>
 
-      <h4 className={styles.title}>{title}</h4>
+      <h3 className={styles.title}>{title}</h3>
 
       <p className={styles.description}>{description}</p>
     </div>

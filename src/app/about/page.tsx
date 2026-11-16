@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Biography } from "@/components/sections/about/Biography/Biography";
 import { Education } from "@/components/sections/about/Education/Education";
 import { WorkApproach } from "@/components/sections/about/WorkApproach/WorkApproach";
+import { MeetingFormats } from "@/components/sections/home/MeetingFormats/MeetingFormats";
 import { BookingSection } from "@/components/shared/BookingSection/BookingSection";
 import { site } from "@/data/site";
 
@@ -44,8 +45,9 @@ export default function AboutPage() {
       tabIndex={-1}
     >
       <Biography />
-      <Education />
       <WorkApproach />
+      <Education />
+      <MeetingFormats />
       <BookingSection />
     </main>
   );

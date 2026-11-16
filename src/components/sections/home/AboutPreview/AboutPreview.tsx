@@ -28,7 +28,8 @@ export function AboutPreview() {
             </p>
 
             <p className={styles.description}>
-              {site.approach}
+              Провожу онлайн-консультации и очные групповые сессии.
+              Подробнее о специалисте и форматах работы — на странице «Обо мне».
             </p>
             <Link href="/about" className={styles.link}>
               <ActionIcon name="person" />

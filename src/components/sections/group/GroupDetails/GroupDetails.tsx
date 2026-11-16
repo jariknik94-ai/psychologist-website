@@ -41,15 +41,28 @@ export function GroupDetails() {
           </dl>
 
           <div className={styles.action}>
-            <a
-              href={site.telegram.href}
-              className={styles.telegramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name="telegram" />
-              <span>Узнать о групповых встречах</span>
-            </a>
+            <div className={styles.actions}>
+              <a
+                href={site.telegram.href}
+                className={styles.telegramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Узнать о групповых встречах в Telegram — откроется в новой вкладке"
+              >
+                <Icon name="telegram" />
+                <span>Узнать о групповых встречах</span>
+              </a>
+              <a
+                href={site.vk.href}
+                className={styles.telegramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Открыть профиль ВКонтакте — откроется в новой вкладке"
+              >
+                <Icon name="vk" />
+                <span>ВКонтакте</span>
+              </a>
+            </div>
 
             <p className={styles.hint}>
               Напишите, что вас интересует участие в очной групповой сессии.

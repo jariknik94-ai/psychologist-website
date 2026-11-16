@@ -12,6 +12,15 @@ export const site = {
     href: "https://t.me/Nastya_Niku",
   },
 
+  vk: {
+    label: "vk.ru/id37319379",
+    href: "https://vk.ru/id37319379",
+  },
+
+  // Заполнить label и href, когда контакты будут известны.
+  max: { label: "", href: "" },
+  email: { label: "", href: "" },
+
   format: "Онлайн-консультации и очные групповые сессии",
 
   biography:

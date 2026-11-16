@@ -18,9 +18,10 @@ export function Hero() {
               Пространство, где можно <em>быть собой</em>
             </h1>
             <p className={styles.description}>
-              Поддерживающий разговор о важном — в вашем темпе и с
-              уважением к вашим чувствам, опыту и границам.
+              Онлайн-консультации и очные групповые сессии
+              с психологом Анастасией Никуличевой.
             </p>
+            <p className={styles.support}>Поддерживающий разговор о важном — в вашем темпе и с уважением к вашим чувствам и границам.</p>
             <div className={styles.actions}>
               <Link href="/contacts" className={styles.primary}>
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -30,6 +31,7 @@ export function Hero() {
                 <span>Записаться</span>
               </Link>
             </div>
+            <p className={styles.actionHint}>Выберите удобный способ связи на странице контактов.</p>
             <svg className={styles.line} viewBox="0 0 560 120" fill="none" aria-hidden="true" focusable="false">
               <path d="M1 112 C94 38 158 75 235 68 C283 64 312 51 337 77 C385 113 447 32 559 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               <path d="M337 77 C324 66 312 47 314 33 C316 21 325 25 331 44 C338 29 349 20 352 29 C358 42 348 61 337 77" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  padding-block: 64px 24px;
+  padding-block: clamp(40px, 6vw, 64px) 24px;
   border-top: 1px solid var(--color-border);
   background: rgba(255, 250, 247, 0.82);
   backdrop-filter: blur(12px);
@@ -20,13 +20,6 @@
 
 .info {
   max-width: 360px;
-}
-
-.name {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 .description {
@@ -71,14 +64,44 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  min-width: 0;
 }
 
-.contactsTitle {
-  margin-bottom: 8px;
+.contactList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.columnTitle {
+  margin: 0 0 12px;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
+}
+
+.pendingNote {
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.allContacts {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding-block: 6px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 600;
+  text-underline-offset: 4px;
+
+  &:hover { text-decoration: underline; }
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 }
 
 .copyright {
@@ -103,40 +126,16 @@
 @media (max-width: 480px) {
   .main {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
-}
 
-.contactLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  &:hover .iconBadge {
-    background: var(--color-primary);
-    color: var(--color-surface);
-  }
-}
-
-.iconBadge {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  background: var(--color-background);
-  color: var(--color-primary);
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .iconBadge {
-    transition: none;
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .description, .link, .copyright { font-size: 16px; }
+  .description, .link, .copyright, .allContacts, .pendingNote { font-size: 16px; }
 }

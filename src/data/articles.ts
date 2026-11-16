@@ -8,7 +8,7 @@ export const articles: Article[] = [
       "Здесь появится краткое описание материала о первой консультации.",
     status: "draft",
     cover: {
-      src: "/images/articles/first-meeting-rose.jpg",
+      src: "/images/articles/first-meeting-online-v2.jpg",
       alt: "",
     },
     content: [
@@ -49,7 +49,7 @@ export const articles: Article[] = [
       "Здесь появится материал о формате групповых встреч, знакомстве с участниками и процессе совместной работы.",
     status: "draft",
     cover: {
-      src: "/images/articles/group-sessions-rose.jpg",
+      src: "/images/articles/group-sessions-circle-v2.jpg",
       alt: "",
     },
     content: [
@@ -86,7 +86,7 @@ export const articles: Article[] = [
     "Здесь появится материал об онлайн-консультациях и очных групповых сессиях.",
   status: "draft",
     cover: {
-      src: "/images/articles/choosing-format-rose.jpg",
+      src: "/images/articles/choosing-format-v2.jpg",
       alt: "",
     },
   content: [

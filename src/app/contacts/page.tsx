@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: `${site.name} | Психолог`,
     title: `Контакты | ${site.name}`,
     description:
-      "Телефон и Telegram для связи и записи на встречу.",
+      "Телефон, Telegram и ВКонтакте для связи и записи на встречу.",
     images: [{ url: "/images/social/contacts-preview.jpg", alt: site.name }],
   },
 
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Контакты | ${site.name}`,
     description:
-      "Телефон и Telegram для связи и записи на встречу.",
+      "Телефон, Telegram и ВКонтакте для связи и записи на встречу.",
     images: ["/images/social/contacts-preview.jpg"],
   },
 };

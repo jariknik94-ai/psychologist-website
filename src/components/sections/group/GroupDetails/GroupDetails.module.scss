@@ -55,6 +55,12 @@
   margin-top: 36px;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
 .telegramLink {
   display: inline-flex;
   align-items: center;
@@ -100,6 +106,8 @@
   .telegramLink {
     width: 100%;
   }
+
+  .actions { flex-direction: column; }
 }
 
 @media (max-width: 640px) {

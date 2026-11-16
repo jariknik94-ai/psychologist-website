@@ -5,7 +5,7 @@
 }
 
 .content {
-  max-width: 760px;
+  max-width: 900px;
 }
 
 .title {
@@ -15,8 +15,8 @@
 }
 
 .placeholder {
-  @include paper.card;
-  padding: clamp(24px, 4vw, 36px);
+  @include paper.long-card;
+  padding: clamp(32px, 4vw, 44px);
 }
 
 .subtitle {

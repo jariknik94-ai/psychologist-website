@@ -2,6 +2,7 @@ import { AboutPreview } from "@/components/sections/home/AboutPreview/AboutPrevi
 import { ArticlesPreview } from "@/components/sections/home/ArticlesPreview/ArticlesPreview";
 import { ConsultationSteps } from "@/components/sections/home/ConsultationSteps/ConsultationSteps";
 import { Hero } from "@/components/sections/home/Hero/Hero";
+import { MeetingFormats } from "@/components/sections/home/MeetingFormats/MeetingFormats";
 import { BookingSection } from "@/components/shared/BookingSection/BookingSection";
 import { FAQ } from "@/components/shared/FAQ/FAQ";
 
@@ -16,9 +17,10 @@ export default function HomePage() {
     >
       <Hero />
       <AboutPreview />
+      <MeetingFormats />
       <ConsultationSteps />
-      <ArticlesPreview />
       <FAQ />
+      <ArticlesPreview />
       <BookingSection />
     </main>
   );

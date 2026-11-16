@@ -6,9 +6,36 @@
   background: transparent;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .7fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+}
+
 .content {
   max-width: 760px;
 }
+
+.photoFrame {
+  width: min(100%, 420px);
+  margin-inline: auto;
+  padding: 8px;
+  border: 1px solid rgba(161, 104, 106, .36);
+  border-radius: 49% 51% 46% 54% / 52% 42% 58% 48%;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 6px solid rgba(255, 251, 248, .88);
+  border-radius: 49% 51% 46% 54% / 52% 42% 58% 48%;
+  background: #e7d8d1;
+}
+
+.image { object-fit: cover; object-position: center 35%; }
 
 .eyebrow {
   margin-bottom: 20px;
@@ -68,4 +95,9 @@
   .text {
     font-size: 18px;
   }
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .photoFrame { width: min(100%, 78vw); max-width: 380px; }
 }

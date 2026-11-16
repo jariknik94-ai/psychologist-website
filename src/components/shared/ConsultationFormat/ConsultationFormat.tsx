@@ -51,11 +51,16 @@ export function ConsultationFormat({
           <Icon name="telegram" />
           <span>Написать в Telegram</span>
         </a>
-
-        {/* <p className={styles.hint}>
-          Откроется Telegram в новой вкладке. Укажите, какой
-          формат встречи вас интересует.
-        </p> */}
+        <a
+          href={site.vk.href}
+          className={styles.telegramLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Открыть ВКонтакте: ${title}. Откроется в новой вкладке`}
+        >
+          <Icon name="vk" />
+          <span>ВКонтакте</span>
+        </a>
       </div>
     </section>
   );

@@ -1,0 +1,38 @@
+.item {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border: 1px solid rgba(150, 91, 95, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 250, 247, 0.55);
+  color: var(--color-primary);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+a.item:hover {
+  border-color: var(--color-primary);
+  background: rgba(228, 199, 195, 0.65);
+}
+
+a.item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.pending {
+  opacity: 0.65;
+}
+
+.maxIcon {
+  width: 22px;
+  height: 22px;
+  background-color: currentColor;
+  mask: url("/icons/MAX/max.svg") center / contain no-repeat;
+  -webkit-mask: url("/icons/MAX/max.svg") center / contain no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item { transition: none; }
+}

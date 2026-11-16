@@ -1,108 +1,41 @@
 import { Container } from "@/components/ui/Container/Container";
-
 import { StepCard } from "./StepCard/StepCard";
 
 import styles from "./ConsultationSteps.module.scss";
 
-const formats = [
+const steps = [
   {
-    id: "online",
-    title: "Онлайн-консультации",
-    steps: [
-      {
-        id: "contact",
-        title: "Запись",
-        description:
-          "Напишите в Telegram или позвоните, чтобы уточнить условия онлайн-консультации.",
-      },
-      {
-        id: "preparation",
-        title: "Подготовка к встрече",
-        description:
-          "Информация о согласовании времени, платформе и подготовке будет добавлена позже.",
-      },
-      {
-        id: "meeting",
-        title: "Консультация",
-        description:
-          "Описание порядка проведения онлайн-встречи будет добавлено позже.",
-      },
-    ],
+    id: "contact",
+    title: "Свяжитесь со мной",
+    description: "Напишите в Telegram, ВКонтакте или позвоните и расскажите, какой формат встречи вас интересует.",
   },
   {
-    id: "group",
-    title: "Очные групповые сессии",
-    steps: [
-      {
-        id: "request",
-        title: "Заявка на участие",
-        description:
-          "Свяжитесь со мной, чтобы узнать о ближайших групповых сессиях.",
-      },
-      {
-        id: "details",
-        title: "Условия участия",
-        description:
-          "Информация о составе группы, месте проведения и подготовке будет добавлена позже.",
-      },
-      {
-        id: "session",
-        title: "Групповая сессия",
-        description:
-          "Описание порядка проведения групповой сессии будет добавлено позже.",
-      },
-    ],
+    id: "details",
+    title: "Уточните условия",
+    description: "Можно задать вопросы о формате, стоимости и продолжительности встречи.",
+  },
+  {
+    id: "meeting",
+    title: "Договоритесь о встрече",
+    description: "Уточните возможность записи на онлайн-консультацию или участия в групповой сессии.",
   },
 ];
 
 export function ConsultationSteps() {
   return (
-    <section
-      className={styles.section}
-      aria-labelledby="consultation-steps-title"
-    >
+    <section className={styles.section} aria-labelledby="consultation-steps-title">
       <Container>
         <div className={styles.heading}>
-          <h2
-            id="consultation-steps-title"
-            className={styles.title}
-          >
-            Как проходят встречи
-          </h2>
-
-          <p className={styles.description}>
-            Порядок записи и проведения зависит от выбранного
-            формата.
-          </p>
+          <h2 id="consultation-steps-title" className={styles.title}>Как записаться на встречу</h2>
+          <p className={styles.description}>Начать можно с сообщения или звонка — чтобы сначала уточнить всё важное.</p>
         </div>
-
-        <div className={styles.formats}>
-          {formats.map((format) => (
-            <section
-              key={format.id}
-              aria-labelledby={`steps-${format.id}-title`}
-            >
-              <h3
-                id={`steps-${format.id}-title`}
-                className={styles.formatTitle}
-              >
-                {format.title}
-              </h3>
-
-              <ol className={styles.list}>
-                {format.steps.map((step, index) => (
-                  <li key={step.id}>
-                    <StepCard
-                      number={index + 1}
-                      title={step.title}
-                      description={step.description}
-                    />
-                  </li>
-                ))}
-              </ol>
-            </section>
+        <ol className={styles.list}>
+          {steps.map((step, index) => (
+            <li key={step.id}>
+              <StepCard number={index + 1} title={step.title} description={step.description} />
+            </li>
           ))}
-        </div>
+        </ol>
       </Container>
     </section>
   );

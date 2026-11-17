@@ -1,5 +1,6 @@
-import { Icon } from "@/components/ui/Icon/Icon";
-import { site } from "@/data/site";
+import Link from "next/link";
+
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 
 import styles from "./ConsultationFormat.module.scss";
 
@@ -41,26 +42,16 @@ export function ConsultationFormat({
       </dl>
 
       <div className={styles.action}>
-        <a
-          href={site.telegram.href}
-          className={styles.telegramLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Написать в Telegram: ${title}. Откроется в новой вкладке`}
-        >
-          <Icon name="telegram" />
-          <span>Написать в Telegram</span>
-        </a>
-        <a
-          href={site.vk.href}
-          className={styles.telegramLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Открыть ВКонтакте: ${title}. Откроется в новой вкладке`}
-        >
-          <Icon name="vk" />
-          <span>ВКонтакте</span>
-        </a>
+        {id === "group" && (
+          <Link href="/services/group" className={styles.telegramLink}>
+            <ActionIcon name="group" />
+            <span>Подробнее о групповых встречах</span>
+          </Link>
+        )}
+        <Link href="/contacts" className={styles.telegramLink}>
+          <ActionIcon name="calendar" />
+          <span>Записаться</span>
+        </Link>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 
 import type { Article } from "@/types/article";
 
@@ -37,9 +38,7 @@ export function ArticleCard({
         )}
 
         <div className={styles.content}>
-          <span className={styles.badge}>
-            {isDraft ? "Черновик" : "Статья"}
-          </span>
+          {isDraft && <span className={styles.badge}>Черновик</span>}
 
           <Heading
             id={`article-${article.slug}-title`}
@@ -50,10 +49,9 @@ export function ArticleCard({
 
           <p className={styles.excerpt}>{article.excerpt}</p>
 
-          <span className={styles.caption}>
-            {isDraft
-              ? "Демонстрационный материал"
-              : "Материал психолога"}
+          <span className={styles.readMore} aria-hidden="true">
+            <ActionIcon name="book" />
+            <span>Читать</span>
           </span>
         </div>
       </Link>

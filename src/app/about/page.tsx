@@ -4,7 +4,6 @@ import { Biography } from "@/components/sections/about/Biography/Biography";
 import { Education } from "@/components/sections/about/Education/Education";
 import { WorkApproach } from "@/components/sections/about/WorkApproach/WorkApproach";
 import { MeetingFormats } from "@/components/sections/home/MeetingFormats/MeetingFormats";
-import { BookingSection } from "@/components/shared/BookingSection/BookingSection";
 import { site } from "@/data/site";
 
 import styles from "./page.module.scss";
@@ -48,7 +47,6 @@ export default function AboutPage() {
       <WorkApproach />
       <Education />
       <MeetingFormats />
-      <BookingSection />
     </main>
   );
 }

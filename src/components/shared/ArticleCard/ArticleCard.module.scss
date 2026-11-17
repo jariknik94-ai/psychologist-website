@@ -1,4 +1,5 @@
 @use '../../../styles/paper';
+@use '../../../styles/watercolor';
 
 .card {
   height: 100%;
@@ -59,7 +60,7 @@
   align-items: flex-start;
   min-width: 0;
   padding: clamp(32px, 7%, 48px);
-  padding-bottom: max(64px, 12%);
+  padding-bottom: clamp(40px, 8%, 56px);
   overflow-wrap: anywhere;
 }
 
@@ -89,10 +90,12 @@
   line-height: 1.7;
 }
 
-.caption {
+.readMore {
+  @include watercolor.action;
   margin-top: auto;
-  color: var(--color-text-muted);
-  font-size: 14px;
+  margin-left: 10px;
+  min-height: 48px;
+  padding: 4px 18px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -103,5 +106,4 @@
 
 @media (max-width: 640px) {
   .excerpt { font-size: 18px; }
-  .caption { font-size: 16px; }
 }

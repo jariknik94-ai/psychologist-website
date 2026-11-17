@@ -25,5 +25,6 @@ export type Article = {
   cover?: {
     src: string;
     alt: string;
+    thumbnailPosition?: string;
   };
 };

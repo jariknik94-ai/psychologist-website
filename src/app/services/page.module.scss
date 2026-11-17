@@ -11,6 +11,15 @@
   padding-block: clamp(48px, 8vw, 80px);
 }
 
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
 .title {
   @include atmosphere.page-title;
   font-size: clamp(38px, 5.5vw, 64px);
@@ -27,7 +36,10 @@
 }
 
 .formats {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 28px;
 }
 
 .formatLink {
@@ -69,7 +81,6 @@
   }
 
   .formats {
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 12px;

@@ -27,13 +27,12 @@ export function ArticleMiniCard({
             fill
             sizes="120px"
             className={styles.image}
+            style={{ objectPosition: article.cover?.thumbnailPosition }}
           />
         </div>
 
         <div className={styles.content}>
-          <span className={styles.status}>
-            {article.status === "draft" ? "Черновик" : "Статья"}
-          </span>
+          {article.status === "draft" && <span className={styles.status}>Черновик</span>}
 
           <h3
             id={`related-${article.slug}-title`}

@@ -3,6 +3,8 @@
 
 .section {
   @include paper.long-card;
+  display: flex;
+  flex-direction: column;
   padding: clamp(32px, 4vw, 48px);
   scroll-margin-top: var(--anchor-offset);
 }
@@ -47,7 +49,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  margin-top: 32px;
+  margin-top: auto;
+  padding-top: 32px;
 }
 
 .telegramLink {

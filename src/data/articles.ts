@@ -88,6 +88,7 @@ export const articles: Article[] = [
     cover: {
       src: "/images/articles/choosing-format-v2.jpg",
       alt: "",
+      thumbnailPosition: "35% center",
     },
   content: [
     {

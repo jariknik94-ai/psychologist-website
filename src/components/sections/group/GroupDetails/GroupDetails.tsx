@@ -1,5 +1,7 @@
+import Link from "next/link";
+
 import { Container } from "@/components/ui/Container/Container";
-import { Icon } from "@/components/ui/Icon/Icon";
+import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
 import { site } from "@/data/site";
 
 import styles from "./GroupDetails.module.scss";
@@ -24,7 +26,7 @@ export function GroupDetails() {
       <Container>
         <div className={styles.panel}>
           <div>
-            <p className={styles.eyebrow}>Ближайшая встреча</p>
+            <p className={styles.eyebrow}>Очный формат</p>
 
             <h2 id="group-details-title" className={styles.title}>
               Условия участия
@@ -41,28 +43,10 @@ export function GroupDetails() {
           </dl>
 
           <div className={styles.action}>
-            <div className={styles.actions}>
-              <a
-                href={site.telegram.href}
-                className={styles.telegramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Узнать о групповых встречах в Telegram — откроется в новой вкладке"
-              >
-                <Icon name="telegram" />
-                <span>Узнать о групповых встречах</span>
-              </a>
-              <a
-                href={site.vk.href}
-                className={styles.telegramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Открыть профиль ВКонтакте — откроется в новой вкладке"
-              >
-                <Icon name="vk" />
-                <span>ВКонтакте</span>
-              </a>
-            </div>
+            <Link href="/contacts" className={styles.telegramLink}>
+              <ActionIcon name="calendar" />
+              <span>Записаться</span>
+            </Link>
 
             <p className={styles.hint}>
               Напишите, что вас интересует участие в очной групповой сессии.

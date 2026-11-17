@@ -48,12 +48,13 @@ export default function ServicesPage() {
   className={styles.page}
   tabIndex={-1}>
       <Container className={styles.intro}>
+        <p className={styles.eyebrow}>Форматы встреч</p>
         <h1 className={styles.title}>Консультации</h1>
 
         <p className={styles.description}>
-          Онлайн-консультации и очные групповые сессии.
-          Выберите формат, чтобы посмотреть условия
-          и связаться со мной.
+          Выберите между индивидуальной онлайн-консультацией и очной
+          групповой сессией. Если пока не знаете, что подойдёт, можно
+          связаться со мной и уточнить условия.
         </p>
 
         <nav

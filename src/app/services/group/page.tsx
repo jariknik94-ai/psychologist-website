@@ -50,8 +50,8 @@ export default function GroupPage() {
       tabIndex={-1}
     >
       <GroupIntro />
-      <GroupDetails />
       <GroupProgram />
+      <GroupDetails />
     </main>
   );
 }

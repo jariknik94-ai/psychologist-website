@@ -15,23 +15,27 @@ export function ArticleToc({ blocks }: ArticleTocProps) {
   }
 
   return (
-    <nav
-      className={styles.toc}
-      aria-labelledby="article-toc-title"
-    >
-      <h2 id="article-toc-title" className={styles.title}>
-        В этой статье
-      </h2>
-
-      <ul className={styles.list}>
-        {headings.map((heading) => (
-          <li key={heading.id}>
-            <a href={`#${heading.id}`} className={styles.link}>
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <nav className={styles.toc} aria-label="Содержание статьи">
+      <div className={styles.desktop}>
+        <h2 className={styles.title}>В этой статье</h2>
+        <HeadingList headings={headings} />
+      </div>
+      <details className={styles.mobile}>
+        <summary className={styles.summary}>В этой статье <span aria-hidden="true">+</span></summary>
+        <HeadingList headings={headings} />
+      </details>
     </nav>
+  );
+}
+
+function HeadingList({ headings }: { headings: ReturnType<typeof getArticleHeadings> }) {
+  return (
+    <ul className={styles.list}>
+      {headings.map((heading) => (
+        <li key={heading.id}>
+          <a href={`#${heading.id}`} className={styles.link}>{heading.text}</a>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ArticleContent } from "@/components/shared/ArticleContent/ArticleContent";
+import { ArticleBooking } from "@/components/shared/ArticleBooking/ArticleBooking";
 import { ArticleToc } from "@/components/shared/ArticleToc/ArticleToc";
 import { RelatedArticles } from "@/components/shared/RelatedArticles/RelatedArticles";
 import { ActionIcon } from "@/components/ui/ActionIcon/ActionIcon";
@@ -134,6 +135,7 @@ export default async function ArticlePage({
 
           <ArticleToc blocks={article.content} />
           <ArticleContent blocks={article.content} />
+          {!isDraft && <ArticleBooking />}
         </article>
 
         <div className={styles.related}>
